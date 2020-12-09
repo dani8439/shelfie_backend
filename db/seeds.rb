@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#Book.destroy_all
+#Quote.destroy_all
 
 book1 = Book.create(title: "Stardust", author: "Neil Gaiman", summary: "Boy travels beyond wall, meets captive princess, twenty-odd years later, their son tries to make his way back to her, and ends up knocking a star from the sky, named Ygrainne. Pirates, murderous princes, and hijinks ensue.")
 book2 = Book.create(title: "Outlander", author: "Diana Gabaldon", summary: "WWII nurse travels back through stones to eighteenth-century Scotland, falls in love with outlaw Highlander, James Fraser.")
