@@ -22,7 +22,7 @@ class Api::V1::BooksController < ApplicationController
     if book.save
       render json: book, status: :accepted
     else
-      render json: {errors: book.errors.full_messages}, status: :unprocessible_entity
+      render json: {errors: book.errors.full_messages}, status: :unprocessable_entity
     end
 
   end
