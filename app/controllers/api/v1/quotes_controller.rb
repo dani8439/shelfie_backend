@@ -10,7 +10,7 @@ class Api::V1::QuotesController < ApplicationController
     if quote.save
       render json: quote, status: :accepted
     else
-      render json: {errors: quote.errors.full_messages}, status: :unprocessible_entity
+      render json: {errors: quote.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
