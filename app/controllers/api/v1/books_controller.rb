@@ -3,6 +3,7 @@ class Api::V1::BooksController < ApplicationController
 
   def index
     books = Book.all
+    # this is the alternative to adding macro's onto the serializer model. Seems more confusing. Ayana explains in video.
     # options = {
     #   #include associated quotes
     #   include: [:quotes]

@@ -21,10 +21,4 @@ class Api::V1::QuotesController < ApplicationController
     params.require(:quote).permit(:quote, :book_id)
   end
 
-
-# Example from Article on serializing deeply nested associations
-#   def author_params
-#   params.require(:author).permit(:name, :email,
-#     books_attributes: [:id, :title, :author_id, :_destroy,     pages_attributes: %i[id number book_id _destroy]])
-# end
 end
