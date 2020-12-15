@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#Book.destroy_all
-#Quote.destroy_all
+Book.destroy_all
+Quote.destroy_all
 
 book1 = Book.create(title: "Stardust", author: "Neil Gaiman", summary: "Boy travels beyond wall, meets captive princess, twenty-odd years later, their son tries to make his way back to her, and ends up knocking a star from the sky, named Ygrainne. Pirates, murderous princes, and hijinks ensue.")
 book2 = Book.create(title: "Outlander", author: "Diana Gabaldon", summary: "WWII nurse travels back through stones to eighteenth-century Scotland, falls in love with outlaw Highlander, James Fraser.")
@@ -21,5 +21,4 @@ quote2 = Quote.create(quote: "'Where did you learn to kiss like that?' I said, a
 quote3 = Quote.create(quote: "Miss Mortimer’s one remaining servant introduced the duchess, who sailed in like a galleon. The duchess was almost as tall as Lord Andrew, but a liking for food had given her a massive figure, which she tried to reduce by wearing sturdy whalebone corsets. She had a small head and small hands and feet. Her massive figure did not seem to belong to her. It was as if she had poked her head through the cardboard cutout of a fat lady at the fairground.", book_id: book3.id)
 quote4 = Quote.create(quote: "For a moment, nothing happened. Then, after a second or so, nothing continued to happen.", book_id: book4.id)
 quote5 = Quote.create(quote: "There's not a man alive who doesn't know fear, Dickon. The brave man is the one who has learned to hide it, that's all.", book_id: book5.id)
-
-#quote added through rails console to book5 Men are born to sin…What does matter most, is not that we err, it is that we do benefit from our mistakes, that we are capable of sincere repentance, of genuine contrition.
+quote6 = Quote.create(quote: "Men are born to sin…What does matter most, is not that we err, it is that we do benefit from our mistakes, that we are capable of sincere repentance, of genuine contrition.", book_id: book5.id)

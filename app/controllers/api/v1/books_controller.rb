@@ -1,6 +1,5 @@
 class Api::V1::BooksController < ApplicationController
 
-
   def index
     books = Book.all
     render json: BookSerializer.new(books)
@@ -20,7 +19,7 @@ class Api::V1::BooksController < ApplicationController
       # if including options, need to pass options into render object too: render json: BookSerializer.new(books, options)
       # don't need instance variables here,  @books = Book.all
       # render json: book -- because rendering directly with json, instead of dealing wtih erb views.
-    end
+    # end
 
 
   def create

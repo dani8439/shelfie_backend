@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_12_08_193431) do
   end
 
   create_table "quotes", force: :cascade do |t|
-    t.bigint "book_id"
+    t.bigint "book_id", null: false
     t.text "quote"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
