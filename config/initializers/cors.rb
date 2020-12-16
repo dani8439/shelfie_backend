@@ -8,7 +8,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins '*'
-    # eventually want to put own origin
+    # eventually want to put own origin (http://localhost:3000/api/v1/books) -- whatever domain front end is hosted at.
 
     resource '*',
       headers: :any,
