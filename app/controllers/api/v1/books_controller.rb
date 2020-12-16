@@ -24,6 +24,7 @@ class Api::V1::BooksController < ApplicationController
 
   def create
     book = Book.new(book_params)
+    # byebug
     if book.save
       render json: book, status: :accepted
     else
