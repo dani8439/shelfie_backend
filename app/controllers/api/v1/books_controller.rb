@@ -37,6 +37,7 @@ class Api::V1::BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :author, :summary, quote_ids: [])
+    # params.require(:book).permit(:title, :author, :summary, quote: [:book_id, :quote])
   end
 
 end
