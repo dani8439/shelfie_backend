@@ -26,7 +26,7 @@ class Api::V1::BooksController < ApplicationController
     book = Book.new(book_params)
     # byebug
     if book.save
-      render json: book, status: :accepted
+      render json: book, include: :quotes, status: :accepted
     else
       render json: {errors: book.errors.full_messages}, status: :unprocessable_entity
     end
@@ -36,8 +36,8 @@ class Api::V1::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :summary, quote_ids: [])
-    # params.require(:book).permit(:title, :author, :summary, quote: [:book_id, :quote])
+    # params.require(:book).permit(:title, :author, :summary, quote_ids: [])
+    params.require(:book).permit(:title, :author, :summary, quotes: [])
   end
 
 end
