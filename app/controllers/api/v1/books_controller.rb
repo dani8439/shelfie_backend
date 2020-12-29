@@ -11,9 +11,12 @@ class Api::V1::BooksController < ApplicationController
   # end
 
   def create
-    book = Book.new(book_params); book.quotes.build
-    # book = Book.create(book_params)
     byebug
+    book = Book.new(book_params)
+    # ; book.quotes.build
+    book = Book.create(book_params); book.quotes.build
+    # book = Book.create(book_params)
+    # byebug
     if book.save
       render json: book, include: :quotes, status: :accepted
     else
@@ -38,7 +41,7 @@ class Api::V1::BooksController < ApplicationController
 
   def book_params
     # params.require(:book).permit(:title, :author, :summary, quote_ids: [])
-    params.require(:book).permit(:title, :author, :summary, quote_attributes: [:id, :quote])
+    params.require(:book).permit(:title, :author, :summary, quote_attributes: [:quote])
   end
 
 end
