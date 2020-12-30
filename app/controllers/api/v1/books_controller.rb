@@ -6,18 +6,14 @@ class Api::V1::BooksController < ApplicationController
 
   end
 
-  # def new
-  #   book = Book.new; book.quotes.build
-  # end
+  def new
+    book = Book.new; book.quotes.build
+  end
 
   def create
-    byebug
-    book = Book.new(book_params)
-    # ; book.quotes.build
-    book = Book.create(book_params); book.quotes.build
-    # book = Book.create(book_params)
-    # byebug
+    book = Book.create(book_params)
     if book.save
+
       render json: book, include: :quotes, status: :accepted
     else
       render json: {errors: book.errors.full_messages}, status: :unprocessable_entity
@@ -41,7 +37,7 @@ class Api::V1::BooksController < ApplicationController
 
   def book_params
     # params.require(:book).permit(:title, :author, :summary, quote_ids: [])
-    params.require(:book).permit(:title, :author, :summary, quote_attributes: [:quote])
+    params.require(:book).permit(:title, :author, :summary, quotes_attributes: [:quote])
   end
 
 end
