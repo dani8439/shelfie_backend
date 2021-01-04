@@ -14,6 +14,7 @@ book2 = Book.create(title: "Outlander", author: "Diana Gabaldon", summary: "WWII
 book3 = Book.create(title: "The Perfect Gentleman", author: "M.C. Beaton", summary: "Lord Andrew falls in love with his mothers protogee, Penelope, who is as blind as a bat. Many misunderstandings, and the Duchess is insane, and tries to kidnap Penelope when she refuses to bend to her will.")
 book4 = Book.create(title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", summary: "Arthur Dent explores the universe after the world is destroyed to make room for a super highway." )
 book5 = Book.create(title: "The Sunne in Splendour", author: "Sharon Kay Penman", summary: "The life of Richard III and the last of the Plantagenets until the battle of Bosworth Field.")
+book6 = Book.create(title: "Pride & Prejudice", author: "Jane Austen", summary: "Elizabeth Bennett and Mr. Fitzwilliam Darcy meet, misunderstand one another, judge one another, and then eventually fall in love, but not before both of their families embarrass them thoroughly.")
 
 
 quote1 = Quote.create(quote: "A philosopher once asked, 'Are we human because we gaze at the stars, or do we gaze at them because we are human?' Pointless, really...'Do the stars gaze back?' Now, that's a question.", book_id: book1.id)
@@ -22,3 +23,6 @@ quote3 = Quote.create(quote: "Miss Mortimer’s one remaining servant introduced
 quote4 = Quote.create(quote: "For a moment, nothing happened. Then, after a second or so, nothing continued to happen.", book_id: book4.id)
 quote5 = Quote.create(quote: "There's not a man alive who doesn't know fear, Dickon. The brave man is the one who has learned to hide it, that's all.", book_id: book5.id)
 quote6 = Quote.create(quote: "Men are born to sin…What does matter most, is not that we err, it is that we do benefit from our mistakes, that we are capable of sincere repentance, of genuine contrition.", book_id: book5.id)
+quote7 = Quote.create(quote: "Mary wished to say something very sensible, but knew not how.", book_id: book6.id)
+quote8 = Quote.create(quote: "A girl likes to be crossed a little in love now and then.", book_id: book6.id)
+quote9 = Quote.create(quote: "For what do we live, but to make sport for our neighbors, and laugh at them in our turn?", book_id: book6.id)
