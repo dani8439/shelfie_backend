@@ -21,12 +21,12 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find_by(id: params[:id])
+    book = Book.find_by(id: params[:id])
   end
 
   def update
-    @book = Book.find_by(id: params[:id])
-    if @book.update(book_params)
+    book = Book.find_by(id: params[:id])
+    if book.update(book_params)
       render json: book, include: :quotes, status: :accepted
     else
       render json: {errors: book.errors.full_messages}, status: :unprocessable_entity
