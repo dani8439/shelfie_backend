@@ -13,8 +13,9 @@ class Api::V1::BooksController < ApplicationController
   def create
     book = Book.create(book_params)
     if book.save
+      render json: BookSerializer.new(book), status: :accepted
 
-      render json: book, include: :quotes, status: :accepted
+      # render json: book, include: :quotes, status: :accepted
     else
       render json: {errors: book.errors.full_messages}, status: :unprocessable_entity
     end
