@@ -21,6 +21,7 @@ class Api::V1::BooksController < ApplicationController
     end
   end
 
+  # not certain if needed if all editing updating is done on frontend. 
   # def edit
   #   book = Book.find_by(id: params[:id])
   # end
