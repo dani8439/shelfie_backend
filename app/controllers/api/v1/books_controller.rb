@@ -29,10 +29,10 @@ class Api::V1::BooksController < ApplicationController
   def update
     book = Book.find_by(id: params[:id])
     # not updating quotes, updating book.
-    book.update(book_params)
-    if book.save(book_params)
-      # render json: BookSerializer.new(book), status: :accepted
-      render json: book, include: :quotes, status: :accepted
+    # book.update(book_params)
+    if book.update(book_params)
+      render json: BookSerializer.new(book), status: :accepted
+      # render json: book, include: :quotes, status: :accepted
     else
       render json: {errors: book.errors.full_messages}, status: :unprocessable_entity
     end
