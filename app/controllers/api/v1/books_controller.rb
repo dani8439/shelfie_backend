@@ -31,6 +31,7 @@ class Api::V1::BooksController < ApplicationController
     # not updating quotes, updating book.
     # book.update(book_params)
     if book.update(book_params)
+      # render json: BookSerializer.new(book, include: [:quote_attributes]), status: :accepted
       render json: BookSerializer.new(book), status: :accepted
       # render json: book, include: :quotes, status: :accepted
     else

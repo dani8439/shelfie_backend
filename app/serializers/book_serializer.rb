@@ -5,7 +5,8 @@ class BookSerializer
 
 
 
-  # so much bloat this way though 
+
+  # so much bloat this way though
   # attributes :title, :author, :summary, quote_ids: []
   # has_many :quotes
 
