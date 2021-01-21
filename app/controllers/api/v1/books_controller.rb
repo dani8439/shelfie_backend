@@ -31,7 +31,7 @@ class Api::V1::BooksController < ApplicationController
     # book.quotes =
     # not updating quotes, updating book.
     # book.update(book_params)
-    debugger
+    # debugger
     if book.update(book_params)
       # book.save(book_params)
       # if book.quotes = Book.update(params[:quotes_attributes])
@@ -46,8 +46,9 @@ class Api::V1::BooksController < ApplicationController
 
   private
 
+  # possibly need [:id] passed into params so that the association can update according to stackexchange?
   def book_params
-    params.require(:book).permit(:title, :author, :summary, quotes_attributes: [:quote, :_destroy])
+    params.require(:book).permit(:title, :author, :summary, quotes_attributes: [:id, :quote, :_destroy])
   end
 
 end
