@@ -28,13 +28,14 @@ class Api::V1::BooksController < ApplicationController
 
   def update
     book = Book.find_by(id: params[:id])
-    debugger
+    # debugger
     # book.quotes = params[:book][:quotes_attributes]
     # book.quotes =
     # not updating quotes, updating book.
     # book.update(book_params)
     # debugger
     if book.update(book_params)
+      # book.quotes = book.quotes.all
       # book.save(book_params)
       # if book.quotes = Book.update(params[:quotes_attributes])
       # render json: BookSerializer.new(book, include: [:quote_attributes]), status: :accepted
