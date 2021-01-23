@@ -6,7 +6,11 @@ class Api::V1::QuotesController < ApplicationController
   end
 
   def create
-    quote = Quote.new(quote_params)
+    # puts params.inspect
+    book_id = params[:book_id]
+    text = params[:quote]
+    # quote = Quote.new(quote_params)
+    quote = Quote.new({ book_id: book_id, quote: text})
     if quote.save
       render json: QuoteSerializer.new(quote), status: :accepted
       # render json: quote, status: :accepted
