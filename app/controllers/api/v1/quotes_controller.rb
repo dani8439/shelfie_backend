@@ -8,7 +8,8 @@ class Api::V1::QuotesController < ApplicationController
   def create
     quote = Quote.new(quote_params)
     if quote.save
-      render json: quote, status: :accepted
+      render json: QuoteSerializer.new(quote), status: :accepted
+      # render json: quote, status: :accepted
     else
       render json: {errors: quote.errors.full_messages}, status: :unprocessable_entity
     end
