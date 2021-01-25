@@ -37,6 +37,12 @@ class Api::V1::BooksController < ApplicationController
     end
   end
 
+  def delete
+    book = Book.find_by(id: params[:id])
+    book.destroy
+    # render json: book
+  end
+
   private
 
   # possibly need [:id] passed into params so that the association can update according to stackexchange?
