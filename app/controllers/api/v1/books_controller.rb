@@ -44,6 +44,7 @@ class Api::V1::BooksController < ApplicationController
       render json: book
     else
       render json: { error: "Book not Found!" }, status: :unprocessable_entity
+    end 
   end
 
   private
