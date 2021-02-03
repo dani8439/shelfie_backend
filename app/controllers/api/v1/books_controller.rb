@@ -37,7 +37,7 @@ class Api::V1::BooksController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
     # destroy preferred as will delete record from db and it's associated children. Delete will not.
     book = Book.find_by(id: params[:id])
     book.destroy
