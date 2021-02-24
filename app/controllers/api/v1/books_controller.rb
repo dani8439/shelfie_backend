@@ -37,19 +37,19 @@ class Api::V1::BooksController < ApplicationController
     end
   end
 
-  def destroy
-    # raise params.inspect
-    # destroy preferred as will delete record from db and it's associated children. Delete will not.
-    book = Book.find_by(id: params[:id])
-    book.destroy
-    render json: book
-    # unless book.nil?
-    #   book.destroy
-    #   render json: book
-    # else
-    #   render json: { error: "Book not Found!" }, status: :unprocessable_entity
-    # end
-  end
+  # def destroy
+  #   # raise params.inspect
+  #   # destroy preferred as will delete record from db and it's associated children. Delete will not.
+  #   book = Book.find_by(id: params[:id])
+  #   book.destroy
+  #   render json: book
+  #   # unless book.nil?
+  #   #   book.destroy
+  #   #   render json: book
+  #   # else
+  #   #   render json: { error: "Book not Found!" }, status: :unprocessable_entity
+  #   # end
+  # end
 
   private
 
