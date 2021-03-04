@@ -10,7 +10,7 @@ The app is built using a Rails API backend, and JavaScript, HTML, CSS, and Boots
 The frontend is located here: https://github.com/dani8439/shelfie_frontend
 
 1. Clone both repositories to your computer.
-2. CD into the backend.
+2. CD into `shelfie_backend`.
 3. Run the following commands: `bundle install`
 4. Run `rake db:create` to create the databse.
 5. Run `rake db:seed` to seed the database.
