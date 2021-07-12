@@ -6,15 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
 Book.destroy_all
 Quote.destroy_all
 
-book1 = Book.create(title: "Stardust", author: "Neil Gaiman", summary: "Boy travels beyond wall, meets captive princess, twenty-odd years later, their son tries to make his way back to her, and ends up knocking a star from the sky, named Ygrainne. Pirates, murderous princes, and hijinks ensue.")
-book2 = Book.create(title: "Outlander", author: "Diana Gabaldon", summary: "WWII nurse travels back through stones to eighteenth-century Scotland, falls in love with outlaw Highlander, James Fraser.")
-book3 = Book.create(title: "The Perfect Gentleman", author: "M.C. Beaton", summary: "Lord Andrew falls in love with his mothers protogee, Penelope, who is as blind as a bat. Many misunderstandings, and the Duchess is insane, and tries to kidnap Penelope when she refuses to bend to her will.")
-book4 = Book.create(title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", summary: "Arthur Dent explores the universe after the world is destroyed to make room for a super highway." )
-book5 = Book.create(title: "The Sunne in Splendour", author: "Sharon Kay Penman", summary: "The life of Richard III and the last of the Plantagenets until the battle of Bosworth Field.")
-book6 = Book.create(title: "Pride & Prejudice", author: "Jane Austen", summary: "Elizabeth Bennett and Mr. Fitzwilliam Darcy meet, misunderstand one another, judge one another, and then eventually fall in love, but not before both of their families embarrass them thoroughly.")
+dani = User.create(name: "Dani", email: "dani@dani.com", password_digest: "pw", image_url: "https://static.wikia.nocookie.net/disney/images/9/9b/Perro.jpg/revision/latest?cb=20120120042805", bio: "Book lover.")
+
+book1 = Book.create(title: "Stardust", author: "Neil Gaiman", summary: "Boy travels beyond wall, meets captive princess, twenty-odd years later, their son tries to make his way back to her, and ends up knocking a star from the sky, named Ygrainne. Pirates, murderous princes, and hijinks ensue.", user_id: dani.id)
+book2 = Book.create(title: "Outlander", author: "Diana Gabaldon", summary: "WWII nurse travels back through stones to eighteenth-century Scotland, falls in love with outlaw Highlander, James Fraser.", user_id: dani.id)
+book3 = Book.create(title: "The Perfect Gentleman", author: "M.C. Beaton", summary: "Lord Andrew falls in love with his mothers protogee, Penelope, who is as blind as a bat. Many misunderstandings, and the Duchess is insane, and tries to kidnap Penelope when she refuses to bend to her will.", user_id: dani.id)
+book4 = Book.create(title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", summary: "Arthur Dent explores the universe after the world is destroyed to make room for a super highway.", user_id: dani.id)
+book5 = Book.create(title: "The Sunne in Splendour", author: "Sharon Kay Penman", summary: "The life of Richard III and the last of the Plantagenets until the battle of Bosworth Field.", user_id: dani.id)
+book6 = Book.create(title: "Pride & Prejudice", author: "Jane Austen", summary: "Elizabeth Bennett and Mr. Fitzwilliam Darcy meet, misunderstand one another, judge one another, and then eventually fall in love, but not before both of their families embarrass them thoroughly.", user_id: dani.id)
 
 
 quote1 = Quote.create(quote: "A philosopher once asked, 'Are we human because we gaze at the stars, or do we gaze at them because we are human?' Pointless, really...'Do the stars gaze back?' Now, that's a question.", book_id: book1.id)
