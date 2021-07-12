@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :users, only: [:create]
       resources :books, only: [:index, :new, :create, :edit, :update, :destroy] do
 
         resources :quotes, only: [:index, :create]
