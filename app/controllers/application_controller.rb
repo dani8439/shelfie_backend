@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+    # Call authorized method before anything else happens in our app. This will effectively lock down our application.
+    before_action :authorized
 
     # Step 1: Encode/Decode Tokens 
     def encode_token(payload)
