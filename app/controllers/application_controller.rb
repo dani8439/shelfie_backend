@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::API
-    # JWT Authentication goes in here for payload, token, application secret etc. 
+
+    # Step 1: Encode/Decode Tokens 
+    def encode_token(payload)
+        # should store secret in env variable. 
+        JWT.encode(payload, 'my_s3cr3t')
+    end 
 
 end
