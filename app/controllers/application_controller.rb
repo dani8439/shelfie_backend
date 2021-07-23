@@ -40,6 +40,10 @@ class ApplicationController < ActionController::API
         # returns a boolean instead of truthy user object.
     end 
 
+    # Step 3: Authorization helper methods 
+    def authorized 
+        render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+    end 
 
 
 
