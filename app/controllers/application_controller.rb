@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
     end 
 
     # WHY?: `JWT.decode` takes three arguments as well: a JWT as a string, an application secret, and––optionally––a hashing algorithm.
-    def decode_token 
+    def decoded_token 
         if auth_header
             token = auth_header.split(' ')[1]
             # get token into a readable snippet, split at the space.
@@ -23,4 +23,17 @@ class ApplicationController < ActionController::API
             end 
         end 
     end 
+
+
+    # Step 2: Authentication helper methods 
+    def current_user 
+        if decoded_token
+            user_id = decoded_token[0]['user_id']
+            @user = User.find_by(id: user_id)
+        end 
+    end
+
+
+
+
 end
