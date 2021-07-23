@@ -28,10 +28,17 @@ class ApplicationController < ActionController::API
     # Step 2: Authentication helper methods 
     def current_user 
         if decoded_token
+            # JWT.decode => [{ "user_id"=> 1 }, { "alg"=>"HS256" }]
+            # [0] gives us the payload { "user_id"=> 1 }
             user_id = decoded_token[0]['user_id']
             @user = User.find_by(id: user_id)
         end 
     end
+
+    def logged_in? 
+        !!current_user
+        # returns a boolean instead of truthy user object.
+    end 
 
 
 
